@@ -85,18 +85,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:textSize="16sp"
                     android:text="Phone"/>
 
-                <TextView
-                    android:id="@+id/address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
-                    android:layout_weight="2"
-                    android:textSize="16sp"
-                    android:text="Address"/>
+
 
 
             </TableRow>
@@ -118,18 +111,20 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
+                    android:layout_weight="3"
                     android:textSize="16sp"
                     android:text="Email"/>
 
                 <TextView
-                    android:id="@+id/info"
+                    android:id="@+id/address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
-                    android:layout_weight="1"
+                    android:layout_weight="2"
                     android:textSize="16sp"
-                   />
+                    android:text="Address"/>
+
+
 
             </TableRow>
 

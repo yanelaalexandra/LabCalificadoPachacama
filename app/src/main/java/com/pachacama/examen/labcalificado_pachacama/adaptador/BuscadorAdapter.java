@@ -48,7 +48,7 @@ public class BuscadorAdapter extends RecyclerView.Adapter<BuscadorAdapter.ViewHo
             email = itemView.findViewById(R.id.email);
             url = itemView.findViewById(R.id.url);
             logo = itemView.findViewById(R.id.logo);
-            info = itemView.findViewById(R.id.info);
+
 
         }
     }
@@ -74,7 +74,6 @@ public class BuscadorAdapter extends RecyclerView.Adapter<BuscadorAdapter.ViewHo
         holder.phone.setText(buscador.getPhone());
         holder.email.setText(buscador.getEmail());
         holder.url.setText(buscador.getUrl());
-        holder.info.setText(buscador.getInfo());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
