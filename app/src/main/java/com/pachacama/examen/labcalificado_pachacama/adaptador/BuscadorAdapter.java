@@ -84,7 +84,8 @@ public class BuscadorAdapter extends RecyclerView.Adapter<BuscadorAdapter.ViewHo
                 intent.putExtra("name", buscador.getName());
                 intent.putExtra("info", buscador.getInfo());
                 intent.putExtra("phone", buscador.getPhone());
-                intent.putExtra("info", buscador.getUrl());
+                intent.putExtra("url", buscador.getUrl());
+                intent.putExtra("email", buscador.getEmail());
                 holder.itemView.getContext().startActivity(intent);
 
             }

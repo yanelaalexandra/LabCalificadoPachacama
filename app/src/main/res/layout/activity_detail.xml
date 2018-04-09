@@ -31,16 +31,6 @@
 
             <TableRow>
 
-                <TextView
-                    android:id="@+id/imglogo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Logo"
-                    android:textSize="30sp"
-                    android:textStyle="bold"
-                    android:layout_weight="1"
-
-                    />
 
                 <TextView
                     android:id="@+id/name"
@@ -111,6 +101,35 @@
                     android:background="@android:drawable/ic_menu_agenda"
                     android:backgroundTint="@color/colorPrimary"
                     android:onClick="openWebsite"/>
+
+                <ImageButton
+                    android:id="@+id/sms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:drawable/btn_star"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="smgMessage"/>
+
+                <ImageButton
+                    android:id="@+id/correo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:drawable/ic_dialog_email"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="correo"/>
+
+                <ImageButton
+                    android:id="@+id/compartir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:drawable/ic_dialog_dialer"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="compartir"/>
+
+
 
 
             </TableRow>

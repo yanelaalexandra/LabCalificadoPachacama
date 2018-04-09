@@ -28,8 +28,8 @@ public class DetailActivity extends AppCompatActivity {
     private String numbercall;
 
     private String urlw;
+    private String email;
 
-    private TextView image;
 
 
 
@@ -42,14 +42,15 @@ public class DetailActivity extends AppCompatActivity {
 
         info = findViewById(R.id.info);
 
-        image = findViewById(R.id.imglogo);
+
 
         name.setText(this.getIntent().getExtras().getString("name"));
         info.setText(this.getIntent().getExtras().getString("info"));
 
 
 
-        image.setText(this.getIntent().getExtras().getString("logo"));
+
+        email=this.getIntent().getExtras().getString("email");
         numbercall=this.getIntent().getExtras().getString("phone");
         urlw=this.getIntent().getExtras().getString("url");
 
@@ -70,9 +71,21 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+// Mètodo para verificar permisos de sms //
+private static final int PERMISSIONS_SMS = 200;
+public void smgMessage(View view){
 
-    private static final int PERMISSIONS_REQUEST = 100;
+    if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) != PackageManager.PERMISSION_GRANTED) {
 
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.SEND_SMS}, PERMISSIONS_SMS);
+    }else {
+        openSMSApplication();
+    }
+
+}
+
+ // Mètodo para verificar permisos de llamada //
+ private static final int PERMISSIONS_REQUEST = 100;
     public void call(View view){
 
         // Check permission (Api 22 check in Manifest, Api 23 check by requestPermissions)
@@ -85,28 +98,59 @@ public class DetailActivity extends AppCompatActivity {
         }
     }
 
+// Mètodo para hacer la llamada //
     public void openCallApplication(){
-        String phoneNumber = numbercall;
-        if(phoneNumber.isEmpty()){
+        String phoneNum = numbercall;
+        if(phoneNum.isEmpty()){
             Toast.makeText(this, "Phone number required!", Toast.LENGTH_SHORT).show();
             return;
         }
 
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:"+phoneNumber));
+        intent.setData(Uri.parse("tel:"+phoneNum));
 
         // Is necesary to check permission again before startActivity
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED)
             startActivity(intent);
     }
-
+    // Mètodo para abrir el url en el navegador //
     public void openWebsite(View view){
         String urlweb = urlw;
         Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setData(Uri.parse("url:"+urlweb));
+        intent.setData(Uri.parse(urlweb));
         startActivity(intent);
     }
 
+    // Mètodo para enviar un mensaje de texto //
+    public void openSMSApplication(){
+        String phoneNum = numbercall;
+        if(phoneNum.isEmpty()){
+            Toast.makeText(this, "Phone number required!", Toast.LENGTH_SHORT).show();
+            return;
+        }
 
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+        intent.setData(Uri.parse("sms:"+phoneNum));
+
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS) == PackageManager.PERMISSION_GRANTED)
+            startActivity(intent);
+    }
+
+
+    //Mètodo para enviar un email//
+    public void correo(View view){
+        Intent intent = new Intent(Intent.ACTION_SENDTO);
+        intent.setData(Uri.fromParts("mailto",email,null));
+        startActivity(intent);
+    }
+
+    //Mètodo para compartir //
+    public void compartir(View view){
+        Intent sendIntent = new Intent(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, name.getText().toString());
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
+
+    }
 
 }
