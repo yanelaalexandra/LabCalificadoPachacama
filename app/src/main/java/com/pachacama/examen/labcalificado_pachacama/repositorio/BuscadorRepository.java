@@ -11,7 +11,7 @@ public class BuscadorRepository {
     static {
         buscadores.add(new Buscador( 100, "Jovenes", "Tecsup", "Santa Anita", "7532649", "tecsup.edu.pe", "http://www.tecsup.edu.pe/home/","img","Intituto Privado"));
         buscadores.add(new Buscador( 200, "Comida", "KFC", "Lima", "8524695", "kfc@gmail.com", "https://www.kfc.com.pe/Online","img","Restaurant de Comida rápida "));
-        buscadores.add(new Buscador( 300, "Deporte", "Cantolao", "Chorrillos", "2583451", "cantolao@gmail.com", "hhtp://cantolao.com","img","Academia de futbol"));
+        buscadores.add(new Buscador( 300, "Deporte", "Cantolao", "Chorrillos", "2583451", "cantolao@gmail.com", "https://cantolaoperu.org/","img","Academia de futbol"));
             buscadores.add(new Buscador( 400, "Maquillaje", "Shepora", "Lima", "2034867", "shepora.@gmail.com", "http://www.sephora.es/","img","Tienda de Maquillaje"));
         buscadores.add(new Buscador( 500, "Television", "Samsung", "Miraflores", "7534621", "samsung@gmail.com", "http://www.samsung.com/pe/","img","Tienda de televisores"));
         buscadores.add(new Buscador( 600, "Mascotas", "PanchoCavero", "Barranco", "85213647", "caveterinaria@gmail.com", "http://www.panchocavero.com/","img","Veterinaria"));

@@ -1,6 +1,7 @@
 package com.pachacama.examen.labcalificado_pachacama.activities;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -8,9 +9,12 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
 
 import com.pachacama.examen.labcalificado_pachacama.R;
 
@@ -25,6 +29,9 @@ public class DetailActivity extends AppCompatActivity {
 
     private String urlw;
 
+    private TextView image;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,9 +42,14 @@ public class DetailActivity extends AppCompatActivity {
 
         info = findViewById(R.id.info);
 
+        image = findViewById(R.id.imglogo);
+
         name.setText(this.getIntent().getExtras().getString("name"));
         info.setText(this.getIntent().getExtras().getString("info"));
 
+
+
+        image.setText(this.getIntent().getExtras().getString("logo"));
         numbercall=this.getIntent().getExtras().getString("phone");
         urlw=this.getIntent().getExtras().getString("url");
 
@@ -94,6 +106,7 @@ public class DetailActivity extends AppCompatActivity {
         intent.setData(Uri.parse("url:"+urlweb));
         startActivity(intent);
     }
+
 
 
 }

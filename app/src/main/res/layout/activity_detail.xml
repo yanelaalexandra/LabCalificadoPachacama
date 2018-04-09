@@ -32,6 +32,17 @@
             <TableRow>
 
                 <TextView
+                    android:id="@+id/imglogo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Logo"
+                    android:textSize="30sp"
+                    android:textStyle="bold"
+                    android:layout_weight="1"
+
+                    />
+
+                <TextView
                     android:id="@+id/name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -86,11 +97,11 @@
                 <ImageButton
                     android:id="@+id/phonecall"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:background="@android:drawable/ic_menu_call"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:onClick="call"/>
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:background="@android:drawable/ic_menu_call"
+                android:backgroundTint="@color/colorPrimary"
+                android:onClick="call"/>
 
                 <ImageButton
                     android:id="@+id/url"
@@ -99,7 +110,7 @@
                     android:layout_alignParentEnd="true"
                     android:background="@android:drawable/ic_menu_agenda"
                     android:backgroundTint="@color/colorPrimary"
-                    android:onClick="call"/>
+                    android:onClick="openWebsite"/>
 
 
             </TableRow>
