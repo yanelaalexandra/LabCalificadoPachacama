@@ -72,6 +72,42 @@
 
         </TableLayout>
 
+        <TableLayout
+            android:id="@+id/table4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/table3"
+            android:padding="7dp"
+            >
+
+            <TableRow>
+
+
+                <ImageButton
+                    android:id="@+id/phonecall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:drawable/ic_menu_call"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="call"/>
+
+                <ImageButton
+                    android:id="@+id/url"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:drawable/ic_menu_agenda"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:onClick="call"/>
+
+
+            </TableRow>
+
+
+        </TableLayout>
+
+
     </RelativeLayout>
 
 
