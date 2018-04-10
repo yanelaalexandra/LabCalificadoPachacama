@@ -23,29 +23,25 @@
          />
     </Toolbar>
 
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
 
-</RelativeLayout>
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cardView"
         android:layout_below="@+id/toobar"
         android:layout_margin="10dp"
+        app:cardCornerRadius="25dp"
         android:background="@drawable/fondo1"
+
         >
 
 
         <TableLayout
 
             android:id="@+id/tabla"
+            android:background="@drawable/fondo1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:ignore="MissingConstraints"
@@ -65,6 +61,7 @@
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:text="¿Qué busca?"
+                    android:layout_margin="10dp"
                     android:textColor="@color/colorPrimaryDark"
                     />
 
@@ -95,6 +92,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/cardView2"
+        app:cardCornerRadius="25dp"
         android:layout_below="@+id/cardView"
         android:layout_margin="10dp"
         android:background="@drawable/fondo1"
@@ -106,14 +104,11 @@
 
             android:id="@+id/tabla2"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="5dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            android:layout_height="match_parent"
             tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteY="53dp">
+            android:background="@drawable/fondo1"
+            android:stretchColumns="1"
+            >
 
             <TableRow>
 
@@ -121,9 +116,8 @@
                     android:id="@+id/popular"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentTop="true"
                     android:layout_weight="1"
+                    android:layout_margin="10dp"
                     android:textSize="20dp"
                     android:textStyle="bold"
                     android:text="Lo más popular"
@@ -134,11 +128,93 @@
 
             <TableRow>
 
+                <ImageView
+                    android:id="@+id/imgc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/imga2"
 
+                    />
+                <ImageView
+                    android:id="@+id/imgd"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:textStyle="bold"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/imgb"
 
-
+                    />
 
             </TableRow>
+
+
+
+
+
+        </TableLayout>
+
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardView3"
+        app:cardCornerRadius="25dp"
+        android:layout_below="@+id/cardView2"
+        android:layout_margin="10dp"
+        android:background="@drawable/fondo1"
+
+        >
+
+
+        <TableLayout
+
+            android:id="@+id/tabla3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:ignore="MissingConstraints"
+            android:background="@drawable/fondo1"
+            android:stretchColumns="1"
+            >
+
+            <TableRow>
+
+                <TextView
+                    android:id="@+id/inforpagina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_margin="10dp"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:text="Nosotros"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:text="Aplicación para conocer la información relevante de diferentes tienedas del Perú."
+                  android:layout_margin="10dp"
+                   android:textColor="@color/colorPrimaryDark"
+                   />
+            </TableRow>
+
+
+
 
 
         </TableLayout>
